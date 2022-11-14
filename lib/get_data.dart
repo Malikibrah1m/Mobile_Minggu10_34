@@ -11,13 +11,13 @@ class GetDataScreen extends StatefulWidget {
 }
 
 class _GetDataScreenState extends State<GetDataScreen> {
-  final String url = "https://regres.in/api/users?page=2";
+  final String url = "https://reqres.in/api/users?page=2";
   List? data;
 
   @override
   void initState() {
-    _getRefreshDaata();
     super.initState();
+    _getRefreshDaata();
   }
 
   Future<void> _getRefreshDaata() async {
@@ -30,7 +30,7 @@ class _GetDataScreenState extends State<GetDataScreen> {
 
   Future<void> getJsonData(BuildContext context) async {
     var response = await http.get(Uri.parse(url), headers: {
-      "Accept": "aplication/json",
+      "Accept": "application/json",
     });
     print(response.body);
     setState(() {

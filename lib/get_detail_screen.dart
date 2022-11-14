@@ -32,8 +32,8 @@ class _GetDataDetailScreenState extends State<GetDataDetailScreen> {
     setState(() {
       uri = url;
     });
-    var response = await http
-        .get(Uri.parse(uri.toString()), headers: {"Accept": "aplication/json"});
+    var response = await http.get(Uri.parse(uri.toString()),
+        headers: {"Accept": "application/json"});
     print(response.body);
     setState(() {
       var convertDataToJson = jsonDecode(response.body);
